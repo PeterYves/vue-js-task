@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="sample.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- The following description imports Vue.js -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+
+        <div id="app">
+            <h2>Vue.js Task</h2><hr>
+            <!-- In v-model="name", the date set in Vue.js is synchronized with the HTML input element -->
+            Name <input v-model="name" class="form-control"> 
+            course <input v-model="course" class="form-control">
+            Duration of study <input v-model="acceptancePeriod" class="form-control">
+            <br>
+            <!-- select the method to be activated when the button is clicked with button v-on: click = "addStudent",  -->
+            <button v-on:click="addStudent" class="btn btn-success">Add the student you entered</button>
+
+            <ul class="content">
+                <!-- v-for="student in students" here you cut out range of students one by one and assign it to the variable student -->
+                <!-- v-bind:key="student.id" is used to ensure uniqueness of each extracted element -->
+                <li v-for="student in students" v-bind:key="student.id">
+                    <!-- Descriptions written in {{}} can be used to expand the expression of Vue.js data -->
+                    ID {{student.id}} /
+                    Name {{student.name}} /
+                    Course {{student.course}} /
+                    Duration of study {{student.acceptancePeriod}}
+                </li>
+            </ul>
+        </div>
+
+        <script src="sample.js"></script>
+    </body>
+</html>
